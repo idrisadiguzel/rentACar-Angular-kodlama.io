@@ -1,0 +1,18 @@
+<h1>Renk Ekle</h1>
+<form style="margin-top:50px ;" [formGroup]="colorAddForm" (ngSubmit)="addColor()">
+
+
+  <div class="form-group">
+    <input style="margin-top:15px ;" type="text" id="colorName" formControlName="colorName" class="form-control"
+      placeholder="Renk giriniz">
+    <div class="alert alert-danger"
+      *ngIf="colorAddForm.get('colorName').hasError('required') && colorAddForm.get('colorName').dirty"> Renk girmek
+      zorunludur
+    </div>
+  </div>
+
+
+  <button [disabled]="colorAddForm.invalid" style="margin-top:15px ;" type="submit"
+    class="btn btn-primary">Ekle</button>
+
+</form>

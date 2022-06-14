@@ -1,0 +1,57 @@
+<h1>Araba Ekle</h1>
+<form style="margin-top:50px ;" [formGroup]="carAddForm" (ngSubmit)="addCar()">
+
+
+  <div class="form-group">
+    <input style="margin-top:15px ;" type="number" id="brandId" formControlName="brandId" class="form-control"
+      placeholder="Marka ID giriniz">
+    <div class="alert alert-danger"
+      *ngIf="carAddForm.get('brandId').hasError('required') && carAddForm.get('brandId').dirty"> Marka ID girmek
+      zorunludur
+    </div>
+  </div>
+  <div class="form-group">
+    <input style="margin-top:15px ;" type="number" id="colorId" formControlName="colorId" class="form-control"
+      placeholder="Renk ID giriniz">
+    <div class="alert alert-danger"
+      *ngIf="carAddForm.get('colorId').hasError('required') && carAddForm.get('colorId').dirty"> Renk ID girmek
+      zorunludur
+    </div>
+  </div>
+  <div class="form-group">
+    <input style="margin-top:15px ;" type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control"
+      placeholder="Günlük fiyat giriniz">
+    <div class="alert alert-danger"
+      *ngIf="carAddForm.get('dailyPrice').hasError('required') && carAddForm.get('dailyPrice').dirty"> Günlük fiyat
+      girmek zorunludur
+    </div>
+  </div>
+  <div class="form-group">
+    <input style="margin-top:15px ;" type="text" id="description" formControlName="description" class="form-control"
+      placeholder="Model giriniz">
+    <div class="alert alert-danger"
+      *ngIf="carAddForm.get('description').hasError('required') && carAddForm.get('description').dirty"> Model girmek
+      zorunludur
+    </div>
+  </div>
+  <div class="form-group">
+    <input style="margin-top:15px ;" type="text" id="colorName" formControlName="colorName" class="form-control"
+      placeholder="Renk adı giriniz">
+    <div class="alert alert-danger"
+      *ngIf="carAddForm.get('colorName').hasError('required') && carAddForm.get('colorName').dirty"> Renk adı girmek
+      zorunludur
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <input style="margin-top:15px ;" type="text" id="brandName" formControlName="brandName" class="form-control"
+      placeholder="Marka ismi  ekleyiniz">
+    <div class="alert alert-danger"
+      *ngIf="carAddForm.get('brandName').hasError('required') && carAddForm.get('brandName').dirty"> Marka ismi
+      zorunludur
+    </div>
+  </div>
+  <button [disabled]="carAddForm.invalid" style="margin-top:15px ;" type="submit" class="btn btn-primary">Ekle</button>
+
+</form>

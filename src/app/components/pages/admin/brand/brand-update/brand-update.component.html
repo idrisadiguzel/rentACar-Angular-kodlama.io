@@ -1,0 +1,24 @@
+<form style="margin-top:50px ;" *ngIf="brandUpdateForm" [formGroup]="brandUpdateForm" (ngSubmit)="updateBrand()">
+  <div class="form-group">
+    <input  style="margin-top:15px ;" type="text" id="id"  [(ngModel)]="brand.id" formControlName="id" class="form-control" placeholder="">
+    <!-- <div class="alert alert-danger"
+      *ngIf="updateBrand.get('name').hasError('required') && updateBrand.get('name').dirty"> ürün adı zorunludur
+    </div> -->
+  </div>
+
+  <div class="form-group">
+    <input style="margin-top:15px ;" type="text" id="name" [(ngModel)]="brand.name" formControlName="name" class="form-control" placeholder="">
+    <!-- <div class="alert alert-danger"
+      *ngIf="updateBrand.get('name').hasError('required') && updateBrand.get('name').dirty"> ürün adı zorunludur
+    </div> -->
+  </div>
+
+  <div class="form-group">
+    <input style="margin-top:15px ;" type="text" id="logo"  [(ngModel)]="brand.logo" formControlName="logo" class="form-control" placeholder="">
+    <!-- <div class="alert alert-danger"
+      *ngIf="updateBrand.get('name').hasError('required') && updateBrand.get('name').dirty"> ürün adı zorunludur
+    </div> -->
+  </div>
+  <button style="margin-top:15px ;" type="submit" class="btn btn-primary"[disabled]="brandUpdateForm.invalid" >Güncelle</button>
+</form>
+

@@ -1,0 +1,7 @@
+<h1 style="margin-top:10px ;">Renkler <button style="float:right ;" type="button" class="btn btn-success"
+    routerLink="/color-add">Renk Ekle</button></h1>
+<ul *ngFor="let color of colors" class="list-group">
+  <li class="list-group-item">{{color.colorName}}
+    <button style="float:right ;" type="button" class="btn btn-danger" (click)="deleteBrand(color.id)">Sil</button>
+  </li>
+</ul>

@@ -1,0 +1,79 @@
+{
+  "brands": [
+    {
+      "id": 1,
+      "name": "AUDI",
+      "logo": "./assets/brand/audi.png"
+    },
+    {
+      "id": 2,
+      "name": "BMW",
+      "logo": "./assets/brand/bmw.png"
+    },
+    {
+      "id": 3,
+      "name": "Mercedes Benz",
+      "logo": "./assets/brand/mercedes.png"
+    },
+    {
+      "name": "Honda",
+      "logo": "./assets/brand/default.png",
+      "id": 4
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "colorName": "Kırmızı"
+    },
+    {
+      "id": 2,
+      "colorName": "Mavi"
+    },
+    {
+      "id": 3,
+      "colorName": "Yeşil"
+    },
+    {
+      "id": 4,
+      "colorName": "Sarı"
+    },
+    {
+      "colorName": "Siyah",
+      "id": 5
+    },
+    {
+      "colorName": "Beyaz",
+      "id": 6
+    }
+  ],
+  "cars": [
+    {
+      "id": 1,
+      "brandId": 1,
+      "colorId": 1,
+      "dailyPrice": 900,
+      "description": "A5",
+      "brandName": "Audi",
+      "colorName": "Kırmızı"
+    },
+    {
+      "id": 2,
+      "brandId": 2,
+      "colorId": 2,
+      "dailyPrice": 950,
+      "description": "420d",
+      "brandName": "BMW",
+      "colorName": "Mavi"
+    },
+    {
+      "id": 3,
+      "brandId": 3,
+      "colorId": 3,
+      "dailyPrice": 700,
+      "description": "A180",
+      "brandName": "Mercedes Benz",
+      "colorName": "Yeşil"
+    }
+  ]
+}

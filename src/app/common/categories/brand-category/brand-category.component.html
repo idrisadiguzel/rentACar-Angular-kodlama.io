@@ -1,0 +1,7 @@
+<div>
+  <h3 style="text-align:center ;">Markalar</h3>
+  <ul *ngFor="let brand of brands" class="list-group">
+    <a routerLink="/brands/{{brand.id}}" class="list-group-item list-group-item-action"><img style="height:25px ;width:25px;"
+        src="{{brand.logo}}" alt=""> {{brand.name}}</a>
+  </ul>
+</div>

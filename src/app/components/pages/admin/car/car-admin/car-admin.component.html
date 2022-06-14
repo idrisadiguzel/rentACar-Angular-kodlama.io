@@ -1,0 +1,33 @@
+<h1 style="margin-top:10px ;">Arabalar <button style="float:right ;" type="button" routerLink="/car-add" class="btn btn-success">Araba
+    Ekle</button></h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+
+          <th scope="col">Marka</th>
+          <th scope="col">Model</th>
+          <th scope="col">Renk</th>
+          <th scope="col">Günlük Fiyat</th>
+          <th scope="col">Renk Id</th>
+          <th scope="col">Marka Id</th>
+          <th style="float:right;" scope="col">İşlemler</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let car of cars">
+          <th scope="row">{{car.id}}</th>
+
+          <td>{{car.brandName}}</td>
+          <td>{{car.description}}</td>
+          <td>{{car.colorName}}</td>
+          <td>{{car.dailyPrice}}</td>
+          <td>{{car.colorId}}</td>
+          <td>{{car.brandId}}</td>
+          <td><button style="float:right ;" type="button" class="btn btn-danger"(click)="deleteCar(car.id)">Sil</button>
+            <button style="float:right ;" type="button" class="btn btn-warning"routerLink="/car-update/{{car.id}}">Güncelle</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <button style="float:right ;" type="button" class="btn btn-danger">Sil</button>
+    <button style="float:right ;" type="button" class="btn btn-warning">Güncelle</button> -->

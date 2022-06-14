@@ -1,0 +1,8 @@
+<h1 style="margin-top:10px ;" >Markalar <button style="float:right ;" type="button" class="btn btn-success" routerLink="/brand-add">Marka Ekle</button></h1>
+<ul *ngFor="let brand of brands" class="list-group">
+  <li class="list-group-item">{{brand.name}}
+    <button style="float:right ;" type="button"class="btn btn-danger"(click)="deleteBrand(brand.id)" >Sil</button>
+    <button style="float:right ;" type="button" class="btn btn-warning"routerLink="/brand-update/{{brand.id}}" >Güncelle</button>
+    </li>
+
+</ul>
