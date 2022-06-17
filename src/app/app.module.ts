@@ -18,7 +18,7 @@ import { CarAddComponent } from './components/pages/admin/car/car-add/car-add.co
 import { CarUpdateComponent } from './components/pages/admin/car/car-update/car-update.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { BrandPipe } from './pipes/brand.pipe';
-import { CarAddPropComponent } from './components/pages/car-add-prop/car-add-prop.component';
+import { CarDetailComponent } from './components/pages/car-detail/car-detail.component';
 
 
 @NgModule({
@@ -38,10 +38,10 @@ import { CarAddPropComponent } from './components/pages/car-add-prop/car-add-pro
     CarUpdateComponent,
     FilterPipe,
     BrandPipe,
-    CarAddPropComponent
-
+    CarDetailComponent
 
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
