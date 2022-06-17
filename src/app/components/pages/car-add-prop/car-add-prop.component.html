@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="card ; col-md-4">
+      <img src="./assets/car/default.png" class="card-img-top" alt="..." />
+      <div class="card-body" *ngIf="car">
+        <h5 class="card-title">{{ car.brandName }}</h5>
+        <p class="card-text">Model: {{ car.description }}</p>
+        <p class="card-text">Renk: {{ car.colorName }}</p>
+        <p class="card-text">Günlük fiyat: {{ car.dailyPrice }}</p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <form *ngIf="carPropForm" [formGroup]="carPropForm" (ngSubmit)="addCarProp()">
+        <div *ngFor="let carProp of carProps">
+          <input type="checkbox" (change)="onChange(carProp.name, isCheck)" />
+          {{ carProp.name }}
+        </div>
+        <button type="button" class="btn btn-success">Ekle</button>
+      </form>
+    </div>
+  </div>
+</div>

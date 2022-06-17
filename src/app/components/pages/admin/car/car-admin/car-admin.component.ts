@@ -26,6 +26,7 @@ export class CarAdminComponent implements OnInit {
   deleteCar(selectedId: number) {
 
     if (confirm("Silmek istediğinize emin misiniz?")) {
+
       this.carService.deleteCar(selectedId).subscribe(data=>{
         this.carName = data
         alert("Başarıyla silindi.")

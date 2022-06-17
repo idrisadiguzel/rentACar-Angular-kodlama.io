@@ -23,4 +23,12 @@ export class ColorService {
     return this.httpClient.delete<Color>(this.apiUrl+val)
    }
 
+   getColorById(val:number):Observable<Color>{
+    return this.httpClient.get<Color>(this.apiUrl+val)
+  }
+
+  getColorByname(name:string):Observable<Color>{
+    return this.httpClient.get<Color>("http://localhost:3000/colors?q="+name)
+  }
+
 }

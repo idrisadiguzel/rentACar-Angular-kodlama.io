@@ -14,7 +14,9 @@ export class CarService {
   apiUrl: string = "http://localhost:3000/cars/"
 
   getCar(): Observable<Car[]> {
+
     return this.httpClient.get<Car[]>(this.apiUrl);
+
   }
   addCar(val: Car): Observable<Car> {
     return this.httpClient.post<Car>(this.apiUrl, val)

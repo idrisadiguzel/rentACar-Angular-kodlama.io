@@ -12,11 +12,11 @@ export class ColorAdminComponent implements OnInit {
   constructor(private colorService: ColorService) { }
   colors: Color[];
   colorName:Color;
-
   ngOnInit(): void {
     this.getColor();
 
   }
+
 
   getColor() {
     this.colorService.getColor().subscribe(data => {

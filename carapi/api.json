@@ -2,8 +2,8 @@
   "brands": [
     {
       "id": 1,
-      "name": "AUDI",
-      "logo": "./assets/brand/audi.png"
+      "name": "Volkswagen",
+      "logo": "./assets/brand/volkswagen.png"
     },
     {
       "id": 2,
@@ -12,13 +12,147 @@
     },
     {
       "id": 3,
-      "name": "Mercedes Benz",
-      "logo": "./assets/brand/mercedes.png"
+      "name": "Honda",
+      "logo": "./assets/brand/honda.png"
     },
     {
-      "name": "Honda",
+      "id": 4,
+      "name": "Hyundai",
+      "logo": "./assets/brand/hyundai.png"
+    },
+    {
+      "id": 5,
+      "name": "Porsche",
+      "logo": "./assets/brand/porsche.png"
+    },
+    {
+      "id": 6,
+      "name": "Volvo",
+      "logo": "./assets/brand/volvo.png"
+    },
+    {
+      "id": 7,
+      "name": "Skoda",
+      "logo": "./assets/brand/skoda.png"
+    },
+    {
+      "name": "Chery",
       "logo": "./assets/brand/default.png",
-      "id": 4
+      "id": 8
+    },
+    {
+      "name": "Chevrolet",
+      "logo": "./assets/brand/default.png",
+      "id": 9
+    },
+    {
+      "name": "Citroen",
+      "logo": "./assets/brand/default.png",
+      "id": 10
+    },
+    {
+      "name": "Dacia",
+      "logo": "./assets/brand/default.png",
+      "id": 11
+    },
+    {
+      "name": "Alfa Romeo",
+      "logo": "./assets/brand/default.png",
+      "id": 12
+    },
+    {
+      "name": "Aston Martin",
+      "logo": "./assets/brand/default.png",
+      "id": 13
+    },
+    {
+      "name": "Isuzu",
+      "logo": "./assets/brand/default.png",
+      "id": 14
+    },
+    {
+      "name": "Nissan",
+      "logo": "./assets/brand/default.png",
+      "id": 15
+    },
+    {
+      "name": "AUDI",
+      "logo": "./assets/brand/audi.png",
+      "id": 16
+    }
+  ],
+  "cars": [
+    {
+      "id": 1,
+      "brandId": 1,
+      "colorId": 1,
+      "dailyPrice": 350,
+      "description": "Polo",
+      "colorName": "Kırmızı",
+      "brandName": "Volswagen"
+    },
+    {
+      "id": 2,
+      "brandId": 2,
+      "colorId": 2,
+      "dailyPrice": 800,
+      "description": "BMW i4 M50",
+      "colorName": "Mavi",
+      "brandName": "BMW"
+    },
+    {
+      "id": 4,
+      "brandId": 4,
+      "colorId": 4,
+      "dailyPrice": 150,
+      "description": "ACCENT",
+      "colorName": "Beyaz",
+      "brandName": "Hyundai"
+    },
+    {
+      "id": 5,
+      "brandId": 5,
+      "colorId": 5,
+      "dailyPrice": 210,
+      "description": "718 Cayman",
+      "colorName": "Siyah",
+      "brandName": "Porsche"
+    },
+    {
+      "brandId": "2",
+      "colorId": "3",
+      "dailyPrice": 500,
+      "description": "nane",
+      "colorName": "Mavi",
+      "brandName": "BMW",
+      "id": 6
+    },
+    {
+      "brandId": 2,
+      "colorId": 4,
+      "brandName": "BMW",
+      "colorName": "Beyaz",
+      "dailyPrice": 4000,
+      "description": "X7",
+      "id": 11
+    },
+    {
+      "brandId": 6,
+      "colorId": 9,
+      "brandName": "Volvo",
+      "colorName": "Gümüş",
+      "dailyPrice": 1111,
+      "description": "s90",
+      "id": 12
+    },
+    {
+      "brandId": 2,
+      "colorId": 8,
+      "brandName": "BMW",
+      "colorName": "Gözlerinin rengi",
+      "dailyPrice": 111,
+      "description": "asdasd",
+      "id": 13
     }
   ],
   "colors": [
@@ -32,48 +166,81 @@
     },
     {
       "id": 3,
-      "colorName": "Yeşil"
+      "colorName": "Kahverengi"
     },
     {
       "id": 4,
-      "colorName": "Sarı"
+      "colorName": "Beyaz"
     },
     {
-      "colorName": "Siyah",
-      "id": 5
+      "id": 5,
+      "colorName": "Siyah"
     },
     {
-      "colorName": "Beyaz",
+      "colorName": "Yeşil",
       "id": 6
+    },
+    {
+      "colorName": "Mor",
+      "id": 7
+    },
+    {
+      "colorName": "Gözlerinin rengi",
+      "id": 8
+    },
+    {
+      "colorName": "Gümüş",
+      "id": 9
+    },
+    {
+      "colorName": "Pembe",
+      "id": 10
+    },
+    {
+      "colorName": "Sarı",
+      "id": 11
+    },
+    {
+      "colorName": "Turuncu",
+      "id": 12
+    },
+    {
+      "colorName": "Lacivert",
+      "id": 13
+    },
+    {
+      "colorName": "Gri",
+      "id": 14
     }
   ],
-  "cars": [
+  "carProperties": [
     {
       "id": 1,
-      "brandId": 1,
-      "colorId": 1,
-      "dailyPrice": 900,
-      "description": "A5",
-      "brandName": "Audi",
-      "colorName": "Kırmızı"
+      "name": "Adrese Teslim"
     },
     {
       "id": 2,
-      "brandId": 2,
-      "colorId": 2,
-      "dailyPrice": 950,
-      "description": "420d",
-      "brandName": "BMW",
-      "colorName": "Mavi"
+      "name": "Adresten İade"
     },
     {
       "id": 3,
-      "brandId": 3,
-      "colorId": 3,
-      "dailyPrice": 700,
-      "description": "A180",
-      "brandName": "Mercedes Benz",
-      "colorName": "Yeşil"
+      "name": "Ek Sürücü"
+    },
+    {
+      "id": 4,
+      "name": "GPS"
+    },
+    {
+      "id": 5,
+      "name": "Çocuk Koltuğu"
+    },
+    {
+      "id": 6,
+      "name": "Güvence Paketi"
+    },
+    {
+      "id": 7,
+      "name": "Yol Yardım Assistans"
     }
   ]
 }

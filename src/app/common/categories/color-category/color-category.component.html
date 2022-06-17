@@ -1,6 +1,6 @@
-<div>
-  <h3 style="text-align:center">Renkler</h3>
+<div style="margin-top: 10px;">
+  <h3 class="bg bg-dark text-light" style="text-align:center">Renkler</h3>
   <ul *ngFor="let color of colors" class="list-group">
-    <a routerLink="/colors/{{color.id}}" class="list-group-item list-group-item-action"> {{color.colorName}}</a>
+    <a routerLink="/colors/{{color.id}}" href="#" class="list-group-item list-group-item-action"> {{color.colorName}}</a>
   </ul>
 </div>

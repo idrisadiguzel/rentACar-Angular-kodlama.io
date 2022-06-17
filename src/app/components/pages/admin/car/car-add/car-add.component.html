@@ -2,7 +2,7 @@
 <form style="margin-top:50px ;" [formGroup]="carAddForm" (ngSubmit)="addCar()">
 
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <input style="margin-top:15px ;" type="number" id="brandId" formControlName="brandId" class="form-control"
       placeholder="Marka ID giriniz">
     <div class="alert alert-danger"
@@ -17,7 +17,25 @@
       *ngIf="carAddForm.get('colorId').hasError('required') && carAddForm.get('colorId').dirty"> Renk ID girmek
       zorunludur
     </div>
+  </div> -->
+
+  <!-- <h6>Marka ID</h6>
+  <div class="form-group">
+    <select style="margin-top:15px ;" class="form-control" required name="brandId" id="brandId" formControlName="brandId">
+      <option *ngFor="let brand of brands" [value]="brand.id">
+        {{brand.id}}
+      </option>
+    </select>
   </div>
+  <h6>Renk ID</h6>
+  <div class="form-group">
+    <select style="margin-top:15px ;" class="form-control" required name="colorId" id="colorId" formControlName="colorId">
+      <option *ngFor="let color of colors" [value]="color.id">
+        {{color.id}}
+      </option>
+    </select>
+  </div> -->
+  <h6>Günlük Fiyat</h6>
   <div class="form-group">
     <input style="margin-top:15px ;" type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control"
       placeholder="Günlük fiyat giriniz">
@@ -26,6 +44,7 @@
       girmek zorunludur
     </div>
   </div>
+  <h6>Model</h6>
   <div class="form-group">
     <input style="margin-top:15px ;" type="text" id="description" formControlName="description" class="form-control"
       placeholder="Model giriniz">
@@ -34,24 +53,39 @@
       zorunludur
     </div>
   </div>
+  <h6>Renk</h6>
   <div class="form-group">
+    <select style="margin-top:15px ;" class="form-control" required name="colorName" id="colorName"
+      formControlName="colorName">
+      <option *ngFor="let color of colors" [value]="color.colorName">
+        {{color.colorName}}
+      </option>
+    </select>
+  </div>
+  <h6>Marka</h6>
+  <div style="margin-top:15px ;" class="form-group">
+    <select class="form-control" required name="brandName" id="brandName" formControlName="brandName">
+      <option *ngFor="let brand of brands" [value]="brand.name">
+        {{brand.name}}
+      </option>
+    </select>
+  </div>
+  <!-- <div class="form-group">
     <input style="margin-top:15px ;" type="text" id="colorName" formControlName="colorName" class="form-control"
       placeholder="Renk adı giriniz">
     <div class="alert alert-danger"
       *ngIf="carAddForm.get('colorName').hasError('required') && carAddForm.get('colorName').dirty"> Renk adı girmek
       zorunludur
     </div>
-  </div>
-
-
-  <div class="form-group">
+  </div> -->
+  <!-- <div class="form-group">
     <input style="margin-top:15px ;" type="text" id="brandName" formControlName="brandName" class="form-control"
       placeholder="Marka ismi  ekleyiniz">
     <div class="alert alert-danger"
       *ngIf="carAddForm.get('brandName').hasError('required') && carAddForm.get('brandName').dirty"> Marka ismi
       zorunludur
     </div>
-  </div>
+  </div> -->
   <button [disabled]="carAddForm.invalid" style="margin-top:15px ;" type="submit" class="btn btn-primary">Ekle</button>
 
 </form>

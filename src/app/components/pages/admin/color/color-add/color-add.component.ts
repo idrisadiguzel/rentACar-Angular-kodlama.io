@@ -22,6 +22,13 @@ export class ColorAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.createColorAddForm();
+    this.getColor();
+  }
+
+  getColor(){
+    this.colorService.getColor().subscribe(data=>{
+      this.colors=data;
+    })
   }
 
   addColor(){

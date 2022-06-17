@@ -24,7 +24,6 @@ export class BrandAddComponent implements OnInit {
   ngOnInit(): void {
     this.createBrandAddForm();
   }
-
   addBrand() {
     if (this.brandAddForm.valid) {
       this.brand = Object.assign({}, this.brandAddForm.value)
