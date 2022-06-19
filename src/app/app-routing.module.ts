@@ -26,8 +26,8 @@ const routes: Routes = [
   {path:"car-add",component:CarAddComponent,canActivate:[LoginGuard], canDeactivate:[PreviousPageGuard]},
   {path:"car-admin",component:CarAdminComponent,canActivate:[LoginGuard]},
   {path:"car-update/:id",component:CarUpdateComponent,canActivate:[LoginGuard], canDeactivate:[PreviousPageGuard]},
-  {path:"brands/:brandId",component:CarListComponent,canActivate:[LoginGuard], canDeactivate:[PreviousPageGuard]},
-  {path:"colors/:colorId",component:CarListComponent,canActivate:[LoginGuard], canDeactivate:[PreviousPageGuard]},
+  {path:"brands/:brandId",component:CarListComponent,},
+  {path:"colors/:colorId",component:CarListComponent,},
   {path:"car-detail/:id", component: CarDetailComponent},
   {path:"login", component: LoginComponent}
 
