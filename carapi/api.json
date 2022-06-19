@@ -153,6 +153,15 @@
       "dailyPrice": 111,
       "description": "asdasd",
       "id": 13
+    },
+    {
+      "brandId": 2,
+      "colorId": 5,
+      "brandName": "BMW",
+      "colorName": "Siyah",
+      "dailyPrice": 111,
+      "description": "x4",
+      "id": 14
     }
   ],
   "colors": [
@@ -241,6 +250,23 @@
     {
       "id": 7,
       "name": "Yol Yardım Assistans"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "idrisadiguzel@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "email": "aaa@aaa.com",
+      "password": "1234"
+    },
+    {
+      "id": 3,
+      "email": "bbb@bbb.com",
+      "password": "1234"
     }
   ]
 }

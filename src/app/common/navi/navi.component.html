@@ -13,7 +13,7 @@
           <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" *ngIf="isLogged==true" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Admin
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -27,11 +27,15 @@
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>
+
       </ul>
+
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      <a class="nav-link active" *ngIf="isLogged==true" aria-current="page" (click)="logOut()"  >Çıkış yap</a>
+      <a class="nav-link active" *ngIf="isLogged==false" aria-current="page"  routerLink="/login" >Giriş yap</a>
     </div>
   </div>
 </nav>

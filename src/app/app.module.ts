@@ -19,6 +19,7 @@ import { CarUpdateComponent } from './components/pages/admin/car/car-update/car-
 import { FilterPipe } from './pipes/filter.pipe';
 import { BrandPipe } from './pipes/brand.pipe';
 import { CarDetailComponent } from './components/pages/car-detail/car-detail.component';
+import { LoginComponent } from './components/pages/login/login.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { CarDetailComponent } from './components/pages/car-detail/car-detail.com
     CarUpdateComponent,
     FilterPipe,
     BrandPipe,
-    CarDetailComponent
+    CarDetailComponent,
+    LoginComponent,
 
   ],
 

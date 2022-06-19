@@ -3,5 +3,6 @@
 <ul *ngFor="let color of colors" class="list-group">
   <li class="list-group-item">{{color.colorName}}
     <button style="float:right ;" type="button" class="btn btn-danger" (click)="deleteBrand(color.id)">Sil</button>
+    <button style="float:right ;" type="button" class="btn btn-warning"routerLink="/color-update/{{color.id}}">Güncelle</button>
   </li>
 </ul>

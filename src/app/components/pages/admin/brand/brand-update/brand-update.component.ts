@@ -7,17 +7,18 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-brand-update',
   templateUrl: './brand-update.component.html',
-  styleUrls: ['./brand-update.component.css']
+  styleUrls: ['./brand-update.component.css'],
 })
 export class BrandUpdateComponent implements OnInit {
+  constructor(
+    private brandService: BrandService,
+    private formBuilder: FormBuilder,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
-  constructor(private brandService: BrandService, private formBuilder: FormBuilder, private activatedRoute: ActivatedRoute) { }
-
-  brand: Brand
+  brand: Brand;
   brandUpdateForm: FormGroup;
-
   selectedId: number;
-
   brands: Brand[];
 
   updateBrandForm() {
@@ -25,9 +26,7 @@ export class BrandUpdateComponent implements OnInit {
       id: [this.brand.id, Validators.required],
       name: [this.brand.name, Validators.required],
       logo: [this.brand.logo, Validators.required],
-
-
-    })
+    });
   }
 
   ngOnInit(): void {
@@ -36,36 +35,28 @@ export class BrandUpdateComponent implements OnInit {
   }
 
   getBrand() {
-    this.brandService.getBrand().subscribe(data => {
+    this.brandService.getBrand().subscribe((data) => {
       this.brands = data;
-    })
+    });
   }
-
 
   updateBrand() {
     if (this.brandUpdateForm.valid) {
-      this.brand = Object.assign({}, this.brandUpdateForm.value)
+      this.brand = Object.assign({}, this.brandUpdateForm.value);
     }
-    this.brandService.updateBrand(this.brand).subscribe(data => {
-      alert(data.name + " başarılıyla güncellendi")
+    this.brandService.updateBrand(this.brand).subscribe((data) => {
+      alert(data.name + ' başarılıyla güncellendi');
       location.reload();
-
-    })
+    });
   }
-
 
   getBrandById() {
-
-    this.activatedRoute.params.subscribe(params => {
-      if (params["id"])
-        this.selectedId = params["id"]
-    })
-    this.brandService.getBrandById(this.selectedId).subscribe(data => {
-      this.brand = data
+    this.activatedRoute.params.subscribe((params) => {
+      if (params['id']) this.selectedId = params['id'];
+    });
+    this.brandService.getBrandById(this.selectedId).subscribe((data) => {
+      this.brand = data;
       this.updateBrandForm();
-
-    })
-
+    });
   }
-
 }
