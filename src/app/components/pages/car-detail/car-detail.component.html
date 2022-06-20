@@ -9,14 +9,264 @@
         <p class="card-text">Günlük fiyat: {{ car.dailyPrice }}</p>
       </div>
     </div>
-    <div class="col-md-6">
-      <form *ngIf="carPropForm" [formGroup]="carPropForm" (ngSubmit)="addCarProp()">
-        <div *ngFor="let carProp of carProps">
-          <input type="checkbox" (change)="onChange(carProp.name, isCheck)" />
+    <div class="col-md-8">
+      <ul class="list-group" *ngFor="let carProp of carProps">
+        <li class="list-group-item">
           {{ carProp.name }}
+          <button
+            style="float: right"
+            type="button"
+            class="btn btn-primary"
+            (click)="addProp(carProp)"
+          >
+            Ekle
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <h2 style="margin-top: 20px;">Kişisel Bilgileri</h2>
+
+    <div class="form_wrap">
+      <!-- <div class="form_wrap-caption" style="position: relative">
+        <span>Kişisel Bilgiler</span>
+      </div> -->
+      <div class="form_wrap-content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="" class="form-label">İsim*</label>
+              <input
+                oninput="this.value=this.value.turkishToUpper()"
+                class="reservationFormItem form-control BillingInformationupparcase BillingInformationupparcaseFirstName"
+                autocomplete="off"
+                required=""
+                name="FirstName"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="" class="form-label">Soyisim*</label>
+              <input
+                oninput="this.value=this.value.turkishToUpper()"
+                class="reservationFormItem form-control BillingInformationupparcase BillingInformationupparcaseLastName"
+                autocomplete="off"
+                required=""
+                name="LastName"
+              />
+            </div>
+          </div>
         </div>
-        <button type="button" class="btn btn-success">Ekle</button>
-      </form>
+        <div class="row">
+          <div class="col-sm-8 col-lg-12">
+            <div class="form-group">
+              <label for="" class="form-label">Telefon Numarası*</label>
+              <input
+                type="tel"
+                autocomplete="off"
+                class="form-control mask_phone reservationFormItem"
+                required=""
+                name="Phone"
+                maxlength="15"
+                placeholder="(5xx) xxx xx xx"
+              />
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="form-group">
+                  <label for="" class="form-label">E-Posta Adresi*</label>
+                  <input
+                    type="email"
+                    class="form-control reservationFormItem"
+                    required=""
+                    id="Email"
+                    autocomplete="off"
+                    name="Email"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="" class="form-label NationalityName"
+                    >TC Kimlik No*</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control NationalityNameinput mask_TCKN reservationFormItem"
+                    autocomplete="off"
+                    data-parsley-checktckn="TCKN hatalı. Lütfen girilen değeri kontrol ediniz."
+                    required=""
+                    data-parsley-required=""
+                    name="TCKN"
+                    data-parsley-trigger="focusout"
+                    data-parsley-trigger-after-failure="focusout"
+                    maxlength="11"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="form-label">Şehir*</label>
+              <select
+                class="form-control citySelect reservationFormItem"
+                id="City"
+                data-cityid=""
+                required="required"
+              >
+                <option value="">Seçiniz</option>
+                <option value="07be7efd-0646-cbc9-cdaf-39f40bdd396c">
+                  İstanbul
+                </option>
+                <option value="1ea0b257-d530-fc5a-bca7-39f40bdd7af5">
+                  Ankara
+                </option>
+              </select>
+              <input type="hidden" name="City" id="selectedCityId" />
+              <input
+                name="CityName"
+                id="CityName"
+                class="reservationFormItem form-control cityInput"
+                style="display: none"
+                autocomplete="off"
+              />
+            </div>
+            <div class="form-group">
+              <label for="" class="form-label">Adres*</label>
+              <textarea
+                class="form-control form-control-textarea reservationFormItem"
+                maxlength="140"
+                name="Address"
+                required=""
+              ></textarea>
+            </div>
+            <div class="form-group form-group-checkbox">
+              <input
+                type="checkbox"
+                name="billingCustomerInfo"
+                id="billingCustomerInfo"
+                onchange="Reservation.Form.BillingCustomerInfo(this)"
+                data-parsley-multiple="billingCustomerInfo"
+              />
+              <label for="billingCustomerInfo"
+                >Fatura bilgilerimde kişisel bilgilerimi kullan</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    <h2 style="margin-top: 20px;">Fatura Bilgileri</h2>
+      <div class="row">
+        <div class="form_wrap">
+          <!-- <div  class="form_wrap-caption"><span>Fatura Bilgileri</span></div> -->
+
+          <div class="form_wrap-content">
+            <input
+              id="FullName"
+              name="BillingInformation.FullName"
+              type="hidden"
+            />
+            <input
+              id="TaxNumber"
+              name="BillingInformation.TaxNumber"
+              type="hidden"
+            />
+            <div class="row">
+              <div class="col-md-6 individual" style="">
+                <div class="form-group">
+                  <label for="" class="form-label">İsim*</label>
+                  <input
+                    class="form-control js-first-name"
+                    name="BillingInformation.FirstName"
+                    autocomplete="off"
+                    required="required"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 individual" style="">
+                <div class="form-group">
+                  <label for="" class="form-label">Soyisim*</label>
+                  <input
+                    class="form-control js-last-name"
+                    name="BillingInformation.LastName"
+                    autocomplete="off"
+                    required="required"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12 Corporate" style="display: none">
+                <div class="form-group">
+                  <label for="" class="form-label">Firma Adı*</label>
+                  <input
+                    class="form-control js-firm-name"
+                    id="FirmName"
+                    name="BillingInformation.FirmName"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12 individual" style="">
+                <div class="form-group">
+                  <label for="" class="form-label NationalityName"
+                    >TC Kimlik No*</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control NationalityNameinput mask_TCKN js-tc"
+                    autocomplete="off"
+                    name="BillingInformation.TCKN"
+                    data-parsley-checktckn="TCKN hatalı. Lütfen girilen değeri kontrol ediniz."
+                    maxlength="11"
+                    required="required"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12 Corporate" style="display: none">
+                <div class="form-group">
+                  <label for="" class="form-label">Vergi No*</label>
+                  <input
+                    class="form-control"
+                    id="FirmTaxNumber"
+                    name="BillingInformation.Tax"
+                    maxlength="11"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12 Corporate" style="display: none">
+                <div class="form-group">
+                  <label for="" class="form-label">Vergi Dairesi*</label>
+                  <input
+                    class="form-control js-tax-office"
+                    name="BillingInformation.TaxOffice"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="" class="form-label">Adres*</label>
+              <textarea
+                class="form-control form-control-textarea js-address"
+                maxlength="140"
+                name="BillingInformation.Address"
+                required=""
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

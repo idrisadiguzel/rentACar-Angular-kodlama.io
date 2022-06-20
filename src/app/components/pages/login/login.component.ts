@@ -6,14 +6,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-  users: User
+  users: User;
   loginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,
-    private authService: AuthService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.createLoginForm();
@@ -21,22 +22,19 @@ export class LoginComponent implements OnInit {
 
   createLoginForm() {
     this.loginForm = this.formBuilder.group({
-      eMail: ["", Validators.required],
-      password: ["", Validators.required]
-    })
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
   }
 
   checkUser() {
-    this.authService.checkUser(this.loginForm.value).subscribe(data => {
+    this.authService.checkUser(this.loginForm.value).subscribe((data) => {
       this.users = data;
-      console.log(this.users)
-      if(data[0]){
-      localStorage.setItem("loginToken","asdfghjkl123456")
-        location.href="/car-list"
+      console.log(this.users);
+      if (data[0]) {
+        localStorage.setItem('loginToken', 'qweasdzxc123');
+        location.href = '/car-list';
       }
-
-
-    }
-    )
+    });
   }
 }

@@ -30,12 +30,17 @@
 
       </ul>
 
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-      <a class="nav-link active" *ngIf="isLogged==true" aria-current="page" (click)="logOut()"  >Çıkış yap</a>
-      <a class="nav-link active" *ngIf="isLogged==false" aria-current="page"  routerLink="/login" >Giriş yap</a>
+    <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" *ngIf="isLogged==false" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Sepet
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li *ngFor="let car of cartItems"><a class="dropdown-item">{{car.car.description}}</a></li>
+          <li *ngFor="let carProp of carPropsCart"><a class="dropdown-item">{{carProp.carProps.name}}</a></li>
+        </ul>
+      </div>
+      <a class="nav-link active" *ngIf="isLogged==true" aria-current="page" role="button" (click)="logOut()"  >Çıkış yap</a>
+      <a class="nav-link active" *ngIf="isLogged==false" aria-current="page" role="button" routerLink="/login" >Giriş yap</a>
     </div>
   </div>
 </nav>

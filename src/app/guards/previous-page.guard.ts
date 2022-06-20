@@ -11,7 +11,8 @@ export class PreviousPageGuard implements CanDeactivate<unknown> {
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    let answer =  confirm("Çıkmak istediğinize emin misiniz?")
+
+      let answer =  confirm("Çıkmak istediğinize emin misiniz?")
       if(answer){
           return true;
       }
