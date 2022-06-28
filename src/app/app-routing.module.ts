@@ -1,3 +1,4 @@
+import { ContactComponent } from './components/pages/contact/contact.component';
 import { PreviousPageGuard } from './guards/previous-page.guard';
 import { LoginComponent } from './components/pages/login/login.component';
 import { LoginGuard } from './guards/login.guard';
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:"brands/:brandId",component:CarListComponent,},
   {path:"colors/:colorId",component:CarListComponent,},
   {path:"car-detail/:id", component: CarDetailComponent},
-  {path:"login", component: LoginComponent}
+  {path:"login", component: LoginComponent},
+  {path:"contact", component: ContactComponent}
 
 ];
 

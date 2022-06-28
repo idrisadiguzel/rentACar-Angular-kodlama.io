@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Car } from './../../../models/car';
 import { ActivatedRoute } from '@angular/router';
 import { CarService } from 'src/app/services/car.service';
@@ -13,17 +13,17 @@ import { CartService } from 'src/app/services/cart.service';
   selector: 'app-car-detail',
   templateUrl: './car-detail.component.html',
   styleUrls: ['./car-detail.component.css'],
-  providers: [CarService, CarService, FormBuilder]
+  providers: [CarService, CarService, UntypedFormBuilder]
 })
 
   export class CarDetailComponent implements OnInit {
 
-    constructor(private carService: CarService, private activatedRoute: ActivatedRoute, private cartService: CartService, private formBuilder: FormBuilder) { }
+    constructor(private carService: CarService, private activatedRoute: ActivatedRoute, private cartService: CartService, private formBuilder: UntypedFormBuilder) { }
     car: Car
     carProps: CarProperty[]
     selectedCarProps: CarProperty[] = []
     carProp: CarProperty
-    carPropForm: FormGroup
+    carPropForm: UntypedFormGroup
     isCheck: boolean = false
     carId:Car;
     cartItems: CartItem[] = []

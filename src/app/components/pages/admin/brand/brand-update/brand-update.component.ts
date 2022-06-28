@@ -1,5 +1,5 @@
 import { Brand } from 'src/app/models/brand';
-import { FormBuilder, Validators, NgForm, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, NgForm, UntypedFormGroup } from '@angular/forms';
 import { BrandService } from 'src/app/services/brand.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -12,12 +12,12 @@ import { ActivatedRoute } from '@angular/router';
 export class BrandUpdateComponent implements OnInit {
   constructor(
     private brandService: BrandService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private activatedRoute: ActivatedRoute
   ) {}
 
   brand: Brand;
-  brandUpdateForm: FormGroup;
+  brandUpdateForm: UntypedFormGroup;
   selectedId: number;
   brands: Brand[];
 

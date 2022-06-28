@@ -1,7 +1,7 @@
 import { Color } from './../../../../../models/color';
 import { ColorService } from './../../../../../services/color.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-color-add',
@@ -10,8 +10,8 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class ColorAddComponent implements OnInit {
 
-  constructor(private colorService:ColorService,private formBuilder: FormBuilder) { }
-  colorAddForm:FormGroup
+  constructor(private colorService:ColorService,private formBuilder: UntypedFormBuilder) { }
+  colorAddForm:UntypedFormGroup
   color:Color
   colors:Color[];
   createColorAddForm() {

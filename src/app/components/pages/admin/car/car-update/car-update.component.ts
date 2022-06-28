@@ -1,6 +1,6 @@
 import { CarService } from './../../../../../services/car.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
 import { Brand } from 'src/app/models/brand';
@@ -16,7 +16,7 @@ import { BrandService } from 'src/app/services/brand.service';
 export class CarUpdateComponent implements OnInit {
   constructor(
     private carService: CarService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private activatedRoute: ActivatedRoute,
     private brandService: BrandService,
     private colorService: ColorService
@@ -29,7 +29,7 @@ export class CarUpdateComponent implements OnInit {
   colors: Color[];
   colorName: Color;
   getColorById: Color;
-  carUpdateForm: FormGroup;
+  carUpdateForm: UntypedFormGroup;
   cars: Car[]
 
   updatecarUpdateForm() {

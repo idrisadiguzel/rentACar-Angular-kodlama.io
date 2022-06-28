@@ -1,7 +1,7 @@
 import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-brand-add',
@@ -10,8 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class BrandAddComponent implements OnInit {
 
-  constructor(private brandService: BrandService, private formBuilder: FormBuilder) { }
-  brandAddForm: FormGroup;
+  constructor(private brandService: BrandService, private formBuilder: UntypedFormBuilder) { }
+  brandAddForm: UntypedFormGroup;
   brand: Brand;
   brands: Brand[];
   createBrandAddForm() {
