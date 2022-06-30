@@ -27,8 +27,13 @@
         <!-- <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
         </li> -->
-
       </ul>
+
+
+      Dil:
+      <select #selLang (change)="translateLanguageTo(selLang.value)" >
+        <option *ngFor="let language of translate.getLangs()" [value]="language" >{{ language }}</option>
+      </select>
 
     <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" *ngIf="isLogged==false" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,6 +44,7 @@
           <li *ngFor="let carProp of carPropsCart"><a class="dropdown-item">{{carProp.carProps.name}}</a></li>
         </ul>
       </div>
+      <a class="nav-link active" *ngIf="isLogged==false" aria-current="page"  routerLink="/register" >Üye ol</a>
       <a class="nav-link active" *ngIf="isLogged==true" aria-current="page" role="button" (click)="logOut()"  >Çıkış yap</a>
       <a class="nav-link active" *ngIf="isLogged==false" aria-current="page" role="button" routerLink="/login" >Giriş yap</a>
     </div>

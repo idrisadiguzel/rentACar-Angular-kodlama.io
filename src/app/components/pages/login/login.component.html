@@ -1,21 +1,22 @@
 
 <body class="text-center">
 
+
   <form [formGroup]="loginForm">
-    <h1 class="h3 mb-3 fw-normal">Giriş yap</h1>
+    <h1 class="h3 mb-3 fw-normal">{{'Login' | translate}}</h1>
 
     <div class="form-group">
       <input style="margin-top:15px ;" type="text" id="email" formControlName="email" class="form-control"
-        placeholder="Email giriniz">
+        placeholder="Email">
     </div>
 
     <div class="form-group">
       <input style="margin-top:15px ;" type="password" id="password" formControlName="password" class="form-control"
-        placeholder="Şifre giriniz">
+        placeholder="{{'Password' | translate}}">
     </div>
 
 
-    <button style="margin-top:15px ;" class="w-100 btn btn-lg btn-primary" (click)="checkUser()">Giriş yap</button>
+    <button style="margin-top:15px ;" class="w-100 btn btn-lg btn-primary" (click)="checkUser()">{{'Login' | translate}}</button>
 
   </form>
 

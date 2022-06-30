@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { CarProp } from 'src/app/models/carProp';
 import { CartItem } from 'src/app/models/cartItem';
 import { CartService } from 'src/app/services/cart.service';
@@ -12,7 +13,11 @@ export class NaviComponent implements OnInit {
   isLogged: boolean = false;
   cartItems: CartItem[] = [];
   carPropsCart: CarProp[] = [];
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, public translate: TranslateService) {
+    this.translate.addLangs(['tr', 'en']);
+    // Set default language
+    this.translate.setDefaultLang('tr');
+  }
 
   ngOnInit(): void {
     if (localStorage.getItem('loginToken')) {
@@ -20,8 +25,15 @@ export class NaviComponent implements OnInit {
     } else {
       this.isLogged = false;
     }
+
     this.getCarCartItems();
     this.getPropsCartItems();
+
+
+  }
+
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
   }
 
   logOut() {

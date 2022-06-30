@@ -2,7 +2,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { BrandAdminComponent } from './components/pages/admin/brand/brand-admin/brand-admin.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http"
+import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http"
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -23,6 +23,15 @@ import { CarDetailComponent } from './components/pages/car-detail/car-detail.com
 import { LoginComponent } from './components/pages/login/login.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ContactComponent } from './components/pages/contact/contact.component';
+import { RegisterComponent } from './components/pages/register/register.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+
+
+
+export function httpTranslateLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 
 
@@ -47,6 +56,7 @@ import { ContactComponent } from './components/pages/contact/contact.component';
     CarDetailComponent,
     LoginComponent,
     ContactComponent,
+    RegisterComponent,
 
 
   ],
@@ -56,7 +66,14 @@ import { ContactComponent } from './components/pages/contact/contact.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}

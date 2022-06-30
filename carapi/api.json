@@ -79,6 +79,11 @@
       "name": "AUDI",
       "logo": "./assets/brand/audi.png",
       "id": 16
+    },
+    {
+      "name": "leeeş",
+      "logo": "./assets/brand/default.png",
+      "id": 17
     }
   ],
   "cars": [
@@ -225,53 +230,6 @@
   "carProperties": [
     {
       "id": 1,
-      "name": "Adrese Teslim"
-    },
-    {
-      "id": 2,
-      "name": "Adresten İade"
-    },
-    {
-      "id": 3,
-      "name": "Ek Sürücü"
-    },
-    {
-      "id": 4,
-      "name": "GPS"
-    },
-    {
-      "id": 5,
-      "name": "Çocuk Koltuğu"
-    },
-    {
-      "id": 6,
-      "name": "Güvence Paketi"
-    },
-    {
-      "id": 7,
-      "name": "Yol Yardım Assistans"
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "email": "idrisadiguzel@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": 2,
-      "email": "aaa@aaa.com",
-      "password": "1234"
-    },
-    {
-      "id": 3,
-      "email": "bbb@bbb.com",
-      "password": "1234"
-    }
-  ],
-  "carProperties": [
-    {
-      "id": 1,
       "name": "Adrese Teslim",
       "unitPrice": 100,
       "isChecked": false
@@ -311,6 +269,31 @@
       "name": "Yol Yardım Assistans",
       "unitPrice": 120,
       "isChecked": false
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "idrisadiguzel@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "email": "aaa@aaa.com",
+      "password": "1234"
+    },
+    {
+      "id": 3,
+      "email": "bbb@bbb.com",
+      "password": "1234"
+    },
+    {
+      "id": 4
+    },
+    {
+      "email": "aa",
+      "password": "aa",
+      "id": 5
     }
   ]
 }

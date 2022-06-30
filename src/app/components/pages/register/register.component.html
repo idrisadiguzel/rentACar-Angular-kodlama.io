@@ -1,0 +1,23 @@
+<h1>Üye Ol</h1>
+<form style="margin-top:50px ;" [formGroup]="userAddForm" (ngSubmit)="addUser()">
+
+
+  <div class="form-group">
+    <input style="margin-top:15px ;" type="text" id="email" formControlName="email" class="form-control"
+      placeholder="Mail giriniz">
+      <div class="alert alert-danger"
+      *ngIf="userAddForm.get('email').hasError('required') && userAddForm.get('email').dirty"> Mail girmek zorunludur
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <input style="margin-top:15px ;" type="password" id="password" formControlName="password" class="form-control"
+      placeholder="Şifre ekleyiniz">
+      <div class="alert alert-danger"
+      *ngIf="userAddForm.get('password').hasError('required') && userAddForm.get('password').dirty"> Şifre girmek zorunludur.
+    </div>
+  </div>
+  <button   style="margin-top:15px ;" type="submit" class="btn btn-primary">Üye ol</button>
+
+</form>

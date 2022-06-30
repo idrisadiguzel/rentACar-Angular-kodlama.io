@@ -14,6 +14,7 @@ import { BrandAddComponent } from './components/pages/admin/brand/brand-add/bran
 import { BrandAdminComponent } from './components/pages/admin/brand/brand-admin/brand-admin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegisterComponent } from './components/pages/register/register.component';
 
 const routes: Routes = [
   {path:"",component:CarListComponent},
@@ -30,8 +31,9 @@ const routes: Routes = [
   {path:"brands/:brandId",component:CarListComponent,},
   {path:"colors/:colorId",component:CarListComponent,},
   {path:"car-detail/:id", component: CarDetailComponent},
-  {path:"login", component: LoginComponent},
-  {path:"contact", component: ContactComponent}
+  {path:"login", component: LoginComponent, canDeactivate:[PreviousPageGuard]},
+  {path:"contact", component: ContactComponent},
+  { path: "register", component: RegisterComponent, canDeactivate:[PreviousPageGuard] }
 
 ];
 
